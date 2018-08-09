@@ -84,11 +84,29 @@ public class Menu {
         
     }
     public static void RemoverJog(){
-        
+        System.out.println("Informe o jogador a remover: ");
+        String joo = input.nextLine();
+        for (int i = 0; i < jogadores.size(); i++) {
+            Jogador jjj = jogadores.get(i);
+            
+            if (jjj.getNome().equals(joo)) {
+                jogadores.remove(jjj);
+                System.out.println("Jogador excluido");
+                break;
+            }
+        }
     }
     
     public static void VisualizarFolha(){
-        System.out.println(jogador.getNome());
+        int c = 1;
+        
+      for(Jogador jogador : jogadores){
+            System.out.println(jogador.getNome());
+        System.out.println(jogador.getCpf());
+        System.out.println(jogador.getValorCompra());
+          System.out.println("========================");
+          c++;
+      }
     }
     
     public static void VerificarVerba(){
